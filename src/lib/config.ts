@@ -11,5 +11,6 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.CLIENT_ID || "",
     }),
   ],
+  secret: process.env.NEXT_PUBLIC_SECRET || "",
   pages,
 } satisfies NextAuthOptions;
