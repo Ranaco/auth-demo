@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 const Login = () => {
   return (
-    <div>
-      <span>Login</span>
+    <div className="h-full w-full flex items-center justify-center">
+      <span>Suppose this page is login</span>
     </div>
   );
 };

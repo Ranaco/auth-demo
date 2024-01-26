@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "./components/navbar";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import AppProvider from "@/components/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mt-[90px]`}>
-        <Navbar />
-        {children}
+      <body className={`${inter.className}`}>
+        <AppProvider>
+          <>
+            <Navbar />
+            <div
+              className="w-screen"
+              style={{
+                height: "calc(100vh - 90px)",
+              }}
+            >
+              {children}
+            </div>
+          </>
+        </AppProvider>
       </body>
     </html>
   );
