@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/navbar";
 import AppProvider from "@/components/provider";
 import "@/styles/globals.css";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <AppProvider>
           <>
-            <Navbar />
+            <Suspense>
+              <Navbar />
+            </Suspense>
             <div
               className="w-screen"
               style={{
